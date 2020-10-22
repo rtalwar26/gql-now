@@ -1,0 +1,20 @@
+{
+  "name": "gql-now",
+  "version": "1.0.0",
+  "description": "Very thin gql client",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rajat Talwar",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.2"
+  },
+  "repository": {
+    "url": "https://github.com/rtalwar26/gql-now"
+  }
+}
