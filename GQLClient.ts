@@ -3,7 +3,7 @@ import { build_mutation_query, build_query } from './gqlquery/common';
 export interface GQLClientInterface {
   query(operation: string, variables: any, fields: string): Promise<any>
 }
-export class GQLClient implements GQLClientInterface {
+export class GQLNow implements GQLClientInterface {
   private _url: string
   private _headers: Object
   constructor(url: string,headers:Object ) {

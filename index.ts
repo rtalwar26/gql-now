@@ -1,2 +1,2 @@
-import  {GQLClient} from "./GQLClient";
-export  {GQLClient};
+import  {GQLNow} from "./GQLClient";
+export  {GQLNow};
