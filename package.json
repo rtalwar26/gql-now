@@ -16,5 +16,10 @@
   },
   "repository": {
     "url": "https://github.com/rtalwar26/gql-now"
-  }
+  },
+  "keywords": [
+    "graphql",
+    "gql",
+    "simple"
+  ]
 }
