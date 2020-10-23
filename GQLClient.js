@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GQLClient = void 0;
+exports.GQLNow = void 0;
 const Networking_1 = require("./Networking");
 const common_1 = require("./gqlquery/common");
-class GQLClient {
-    constructor(url, headers) {
+class GQLNow {
+    constructor(url, headers = {}) {
         this._url = url;
         this._headers = headers;
     }
@@ -23,4 +23,4 @@ class GQLClient {
         return result.data;
     }
 }
-exports.GQLClient = GQLClient;
+exports.GQLNow = GQLNow;

@@ -6,9 +6,9 @@ export interface GQLClientInterface {
 export class GQLNow implements GQLClientInterface {
   private _url: string
   private _headers: Object
-  constructor(url: string,headers:Object ) {
+  constructor(url: string,headers:Object = {} ) {
     this._url = url;
-    this._headers = headers;
+    this._headers = headers 
   }
  
   async query(operation: string, variables: any, fields: string): Promise<any> {
