@@ -28,13 +28,15 @@ const build_query_string = async (type, operation, variables, fields) => {
     query_str += '}';
     return query_str;
 };
-exports.build_query = async (operation, variables, fields) => {
+const build_query = async (operation, variables, fields) => {
     return build_query_string('query', operation, variables, fields);
 };
-exports.build_mutation_query = async (operation, variables, fields) => {
+exports.build_query = build_query;
+const build_mutation_query = async (operation, variables, fields) => {
     return build_query_string('mutation', operation, variables, fields);
 };
-exports.network_request = async (q, subpath) => {
+exports.build_mutation_query = build_mutation_query;
+const network_request = async (q, subpath) => {
     let w = window;
     let shouldFetch = w.app && w.app.data.base_url && (typeof window !== 'undefined');
     !shouldFetch && (() => {
@@ -50,3 +52,4 @@ exports.network_request = async (q, subpath) => {
     });
     return (await r.json());
 };
+exports.network_request = network_request;

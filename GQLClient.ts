@@ -6,9 +6,11 @@ export interface GQLClientInterface {
 export class GQLNow implements GQLClientInterface {
   private _url: string
   private _headers: Object
-  constructor(url: string,headers:Object = {} ) {
+  private _defaults: Object
+  constructor(url: string, headers: Object = {}, defaults: Object = {} ) {
     this._url = url;
-    this._headers = headers 
+    this._headers = headers;
+    this._defaults = defaults;
   }
  
   async query(operation: string, variables: any, fields: string): Promise<any> {
@@ -23,6 +25,7 @@ export class GQLNow implements GQLClientInterface {
   private async network_request(q: string) {
     let net = NetworkFactory.createSimpleClient();
     net.setHttpHeaders(this._headers);
+    net.setDefaults(this._defaults);
     let result = await net.post(this._url, { query: q });
     return result.data;
   }
