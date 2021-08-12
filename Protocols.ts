@@ -17,5 +17,6 @@ export interface NetworkInterface {
     put(url: string, params?: Object): Promise<any>
     delete(url: string, params?: Object): Promise<any>
     setHttpHeaders(headers: Object):void
+    setDefaults(headers: Object):void
 }
 

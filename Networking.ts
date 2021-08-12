@@ -9,6 +9,8 @@ export class MyNetworkClient implements NetworkInterface {
   isReactive: boolean = false;
 
   private headers: any = {};
+  private config: any = {};
+
   constructor() {}
 
   setHttpHeaders(headersMap: any) {
@@ -16,16 +18,21 @@ export class MyNetworkClient implements NetworkInterface {
       this.headers[key] = headersMap[key];
     }
   }
-  private _net(): axios.AxiosInstance {
-    return Axios.create({
-      timeout: 10000,
-      validateStatus: function (status) {
+
+  setDefaults(config: any){
+    let defaultConfig = {
+      validateStatus: function (status: any) {
         return true; // default
       },
-      headers: {
-        ...this.headers,
-      },
-    });
+      timeout: 20000
+    };
+    let headers = this.headers;
+    this.config = {...defaultConfig, ...config, headers};
+  }
+
+  private _net(): axios.AxiosInstance {
+    this.config.headers = this.headers;
+    return Axios.create(this.config);
   }
 
   private async getDataFromCache(url: string, params?: Object): Promise<any> {
