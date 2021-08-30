@@ -1,6 +1,6 @@
 {
   "name": "gql-now",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Very thin gql client",
   "main": "index.js",
   "scripts": {
