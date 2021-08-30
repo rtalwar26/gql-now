@@ -9,7 +9,7 @@ export class MyNetworkClient implements NetworkInterface {
   isReactive: boolean = false;
 
   private headers: any = {};
-  constructor() {}
+  constructor() { }
 
   setHttpHeaders(headersMap: any) {
     for (let key in headersMap) {
@@ -18,7 +18,7 @@ export class MyNetworkClient implements NetworkInterface {
   }
   private _net(): axios.AxiosInstance {
     return Axios.create({
-      timeout: 10000,
+      timeout: 60000,
       validateStatus: function (status) {
         return true; // default
       },

@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GQLNow = void 0;
 const Networking_1 = require("./Networking");
 const common_1 = require("./gqlquery/common");
 class GQLNow {

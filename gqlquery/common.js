@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.network_request = exports.build_mutation_query = exports.build_query = void 0;
 const wrap_in_quotes = (p) => {
     return `"` + p.replace(/\"/g, '\\"').replace(/\\\\"/g, '\\\\\\"') + `"`;
 };
